@@ -5,7 +5,12 @@
 		"es6": true,
 		"commonjs": true
 	},
-	"extends": ["airbnb-base", "prettier", "gsap", "eslint-config-prettier"],
+	"extends": [
+		"airbnb-base",
+		"prettier",
+		"gsap",
+		"eslint-config-prettier"
+	],
 	"globals": {
 		"gsap": true,
 		"Atomics": "readonly",
@@ -43,15 +48,15 @@
 		"prefer-destructuring": "off",
 		"lines-between-class-members": "off",
 		"spaced-comment": "off",
-	  	"no-useless-constructor": "off",
-	  	"import/first": "off",
-	  	"import/newline-after-import": "off",
-	  	"new-cap": "off",
+		"no-useless-constructor": "off",
+		"import/first": "off",
+		"import/newline-after-import": "off",
+		"new-cap": "off",
 		"guard-for-in": "off",
 		"camelcase": "off",
 		"operator-assignment": "off",
 		"no-new": "off",
-	  	"max-classes-per-file": "off",
+		"max-classes-per-file": "off",
 		"no-return-assign": "off",
 		"no-continue": "off",
 		"no-debugger": "off"
