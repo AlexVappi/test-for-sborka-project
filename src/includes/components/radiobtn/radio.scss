@@ -1,0 +1,34 @@
+.like-radio {
+	width: 18px;
+	height: 18px;
+	border: 1px solid #cfcfcf;
+	border-radius: 50%;
+	box-sizing: border-box;
+	position: relative;
+	margin-right: 9px;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		top: calc(50% - 4px);
+		left: calc(50% - 4px);
+		border-radius: 50%;
+		background-color: transparent;
+		transform: scale(0);
+		transition: 0.3s;
+	}
+}
+
+input[type='radio']:checked + label .like-radio::after {
+	background-color: $color;
+	transform: scale(1);
+}
+
+.label-radio {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}

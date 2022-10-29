@@ -1,0 +1,18 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro radio(props) %}
+    <div class="{% if props.className %}{{props.className}}{% endif %}">
+        <input type="radio" name="{{props.name}}" class="input_hidden" id="{{props.id}}" value="{{props.value}}" {% if props.checked %} checked="checked" {%endif%}>
+        <label for="{{props.id}}" class="label-radio">
+            <div class="like-radio"></div>
+            {% if props.label.type == 'text' %}
+                <span>{{ props.label.val }}</span>
+            {% endif %}
+            {% if props.label.type == 'icon' %}
+                {{
+                    icon(props.label.val)
+                }}
+            {% endif %}
+        </label>
+    </div>
+{% endmacro %}

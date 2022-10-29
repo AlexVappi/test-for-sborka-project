@@ -1,0 +1,3 @@
+{% macro popover(props) %}
+    <div class="popover {% if props.className %}{{props.className}}{%endif%}" data-text="{{props.text}}">?</div>
+{% endmacro %}

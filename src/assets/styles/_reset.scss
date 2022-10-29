@@ -17,6 +17,7 @@ body {
 	font: normal 14px/1.4 Arial, sans-serif;
 	color: #000;
 	background: #fff;
+
 	@include mobile {
 		-webkit-text-size-adjust: 100%;
 	}
@@ -42,16 +43,18 @@ img {
 
 a {
 	color: inherit;
-	text-decoration: underline;
+	text-decoration: none;
+
 	&:hover {
 		color: #333;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 }
 
 table {
 	border: 0;
 	border-collapse: collapse;
+
 	td {
 		padding: 0;
 		vertical-align: top;

@@ -1,0 +1,38 @@
+.like-checkbox {
+	width: 18px;
+	height: 18px;
+	border: 1px solid #cfcfcf;
+	box-sizing: border-box;
+	position: relative;
+	margin-right: 9px;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		top: calc(50% - 4px);
+		left: calc(50% - 4px);
+		background-color: transparent;
+		transform: scale(0);
+		transition: 0.3s;
+	}
+}
+
+input[type='checkbox']:checked + label .like-checkbox::after {
+	background-color: $color;
+	transform: scale(1);
+}
+
+.label-checkbox {
+	display: flex;
+	align-items: center;
+	color: #8c8c8c;
+	margin-bottom: 12px;
+	cursor: pointer;
+
+	a {
+		color: #000;
+	}
+}

@@ -1,0 +1,94 @@
+.product {
+	display: flex;
+	align-items: flex-start;
+
+	&:not(:last-child) {
+		margin-bottom: 40px;
+	}
+}
+
+.product__image {
+	min-width: 100px;
+	margin-right: 12px;
+}
+
+.product__body {
+	flex-grow: 1;
+}
+
+.product__desc {
+	min-height: 32px;
+	margin-bottom: 15px;
+}
+
+.product__counter,
+.product__bottom {
+	display: flex;
+	align-items: center;
+}
+
+.product__bottom {
+	line-height: 1;
+	user-select: none;
+}
+
+.product__counter {
+	margin-right: 25px;
+}
+
+.product__count {
+	// margin: 0 17px;
+	width: 43px;
+	text-align: center;
+}
+
+.counter-btn {
+	width: 20px;
+	height: 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
+
+	&__dec {
+		background-image: url('../images/minus.svg');
+	}
+
+	&__inc {
+		background-image: url('../images/plus.svg');
+	}
+}
+
+// .product-remove {
+//     width: 19px;
+//     min-width: 19px;
+//     height: 19px;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     cursor: pointer;
+//     background-image: url('../images/cross.svg');
+// }
+
+.product-remove {
+	cursor: pointer;
+
+	&:hover {
+		.product-remove__icon {
+			fill: #000;
+		}
+	}
+}
+
+.product-remove__icon {
+	fill: #cfcfcf;
+	transition: 0.3s;
+	pointer-events: none;
+}
+
+@media screen and (max-width: 1150px) {
+	.product__image {
+		min-width: 80px;
+		width: 80px;
+	}
+}

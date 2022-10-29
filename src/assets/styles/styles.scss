@@ -5,13 +5,19 @@
 @import 'reset';
 @import 'global';
 @import 'layout';
-// @import 'controls';
+@import 'controls';
 
 // ======= COMPONENTS =======
 @import '../../includes/components/button/button';
+@import '../../includes/components/steps/steps';
+@import '../../includes/components/radiobtn/radio';
+@import '../../includes/components/checkbox/checkbox';
+@import '../../includes/components/popover/popover';
+@import '../../includes/components/product/product';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
+@import '../../includes/footer/footer';
 
 // ======= PAGES =======
 @import 'pages/main';

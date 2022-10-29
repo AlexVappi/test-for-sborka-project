@@ -1,7 +1,14 @@
-{% macro menu(active=false) %}
-	<nav class="menu">
-		{% for item in menuItems %}
-			<a href="{{ item.path }}" class="menu__item{% if item.id == activeItem %} _active{% endif %}" style="margin-right: 15px;">{{ item.name }}</a>
-		{% endfor %}
-	</nav>
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro menu(active = false) %}
+    <nav class="menu">
+        {{ icon({
+            iconName: 'cross',
+            className: 'icon cancelMenu',
+            attributes: 'width="30" height="28" viewBox="0 0 19 18"'
+        }) }}
+        {% for item in menuItems %}
+            <a href="{{ item.path }}" class="menu__item{% if item.id == activeItem %} _active{% endif %}">{{ item.name }}</a>
+        {% endfor %}
+    </nav>
 {% endmacro %}

@@ -1,15 +1,27 @@
 {
 	"menuItems": [
 		{
-			"name": "Menu Item 1",
+			"name": "Women’s",
 			"path": "#"
 		},
 		{
-			"name": "Menu Item 2",
+			"name": "Men’s",
 			"path": "#"
 		},
 		{
-			"name": "Menu Item 3",
+			"name": "Home",
+			"path": "#"
+		},
+		{
+			"name": "Travel",
+			"path": "#"
+		},
+		{
+			"name": "Beauty",
+			"path": "#"
+		},
+		{
+			"name": "Sale",
 			"path": "#"
 		}
 	],
@@ -22,5 +34,30 @@
 			"title": "Item 2",
 			"text": "Desc 2"
 		}
-	]
+	],
+	"products": [
+		{
+			"id": 0,
+			"title": "Jacket",
+			"desc": "Amet minim mollit non deserunt ullamco est sit",
+			"image": "/assets/images/jacket.png",
+			"price": 525
+		},
+		{
+			"id": 1,
+			"title": "Boots",
+			"desc": "Amet minim mollit non",
+			"image": "/assets/images/boot.png",
+			"price": 525
+		}
+	],
+	"stepsItems": [
+		"Account",
+		"Shipping",
+		"Billing",
+		"Review"
+	],
+	"currentStep": 3,
+	"tax": 100,
+	"shipping": 150
 }

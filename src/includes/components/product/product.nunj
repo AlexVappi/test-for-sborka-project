@@ -1,0 +1,28 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro product(props) %}
+    <div class="product">
+        <img class="product__image" src="{{props.image}}" alt="{{props.title}}">
+        <div class="product__body">
+            <div class="product__desc">{{ props.desc }}</div>
+            <div class="product__bottom">
+                <div class="product__counter">
+                    <div data-decrement="{{props.id}}" class="counter-btn counter-btn__dec"></div>
+                    <div class="product__count">1</div>
+                    <div data-increment="{{props.id}}" class="counter-btn counter-btn__inc"></div>
+                </div>
+                <div class="product__price">$
+                    <span class="product__sum">{{ props.price }}</span></div>
+            </div>
+        </div>
+        <div class="product-remove" data-remove="{{props.id}}">
+            {{
+                icon({
+                    iconName: 'cross',
+                    className: 'icon product-remove__icon',
+                    attributes: 'width="19" height="18" viewBox="0 0 19 18"'
+                })
+            }}
+        </div>
+    </div>
+{% endmacro %}
