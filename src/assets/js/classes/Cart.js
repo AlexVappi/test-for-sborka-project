@@ -22,9 +22,9 @@ export default class Cart {
 			// increment event
 			if (typeof e.target.dataset.increment !== 'undefined') {
 				const id = +e.target.dataset.increment;
-				for (const el of this.data) {
-					if (el.id === id) {
-						++el.count;
+				for (let i = 0; i < this.data.length; i++) {
+					if (this.data[i].id === id) {
+						++this.data[i].count;
 						break;
 					}
 				}
@@ -34,12 +34,11 @@ export default class Cart {
 			// decrement event
 			if (typeof e.target.dataset.decrement !== 'undefined') {
 				const id = +e.target.dataset.decrement;
-				for (const el of this.data) {
-					if (el.id === id) {
-						--el.count;
-						if (el.count < 1) {
-							this.removeElem(id);
-							return;
+				for (let i = 0; i < this.data.length; i++) {
+					if (this.data[i].id === id) {
+						--this.data[i].count;
+						if (this.data[i].count < 1) {
+							this.removeElem(i);
 						}
 						break;
 					}
@@ -50,12 +49,13 @@ export default class Cart {
 			//remove event
 			if (typeof e.target.dataset.remove !== 'undefined') {
 				const id = +e.target.dataset.remove;
-				for (const el of this.data) {
-					if (el.id === id) {
-						this.removeElem(id);
-						return;
+				for (let i = 0; i < this.data.length; i++) {
+					if (this.data[i].id === id) {
+						this.removeElem(i);
+						break;
 					}
 				}
+				this.render();
 			}
 		};
 
@@ -67,16 +67,8 @@ export default class Cart {
 			});
 		}
 	}
-	removeElem(id) {
-		let i = 0;
-		for (const el of this.data) {
-			if (el.id === id) {
-				this.data.splice(i, 1);
-				break;
-			}
-			i++;
-		}
-		this.render();
+	removeElem(index) {
+		this.data.splice(index, 1);
 	}
 	generateProductHTML(el) {
 		const result = `

@@ -2,7 +2,7 @@ module.exports = {
 	addAwesome: function (str) {
 		return str + ' Awesome!';
 	},
-	formatNumber: function(number) {
+	formatNumber: function (number) {
 		number = number.toString();
 		let result = '';
 

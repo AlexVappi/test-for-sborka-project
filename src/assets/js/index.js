@@ -104,59 +104,53 @@ class ProjectApp {
 			if (document.documentElement.clientWidth < 910) {
 				const basketOpenBtn = document.querySelector('.iconBasket');
 				const basket = document.querySelector('.wrapper__basket');
-				const body = document.querySelector('body');
 				const burger = document.querySelector('.burger');
 				const menu = document.querySelector('.menu');
 				const basketCancelBtn = document.querySelector('.cancelBasket');
 				const menuCancelBtn = document.querySelector('.cancelMenu');
+				const darkenBgEl = document.querySelector('.menu_darken');
 
-				const setBasketActive = e => {
+				const openMobileSidebar = (elem, e) => {
 					e.stopPropagation();
-					basket.classList.add('active');
-					body.classList.add('basket_hasactive');
+					elem.classList.add('active');
+					darkenBgEl.classList.add('active');
 				};
 
-				const removeBasketActive = () => {
-					basket.classList.remove('active');
-					body.classList.remove('basket_hasactive');
+				const closeMobileSidebar = elem => {
+					if (elem.length) {
+						elem.forEach(el => {
+							el.classList.remove('active');
+						});
+					} else {
+						elem.classList.remove('active');
+					}
+					darkenBgEl.classList.remove('active');
 				};
 
-				if (basketOpenBtn) basketOpenBtn.addEventListener('click', setBasketActive);
+				if (basket) {
+					basket.addEventListener('click', stopBubble);
+					if (basketOpenBtn)
+						basketOpenBtn.addEventListener('click', openMobileSidebar.bind(this, basket));
+					if (basketCancelBtn)
+						basketCancelBtn.addEventListener('click', closeMobileSidebar.bind(this, basket));
+				}
+				if (menu) {
+					menu.addEventListener('click', stopBubble);
+					if (burger) burger.addEventListener('click', openMobileSidebar.bind(this, menu));
+					if (menuCancelBtn)
+						menuCancelBtn.addEventListener('click', closeMobileSidebar.bind(this, menu));
+				}
 
-				if (basket) basket.addEventListener('click', stopBubble);
+				document.addEventListener('click', closeMobileSidebar.bind(this, [basket, menu]));
 
-				if (basketCancelBtn) basketCancelBtn.addEventListener('click', removeBasketActive);
-
-				const setBurgerActive = e => {
-					e.stopPropagation();
-					menu.classList.add('active');
-					body.classList.add('menu_hasactive');
-				};
-
-				const removeBurgerActive = () => {
-					menu.classList.remove('active');
-					body.classList.remove('menu_hasactive');
-				};
-
-				if (burger) burger.addEventListener('click', setBurgerActive);
-				if (menu) menu.addEventListener('click', stopBubble);
-				if (menuCancelBtn) menuCancelBtn.addEventListener('click', removeBurgerActive);
-
-				const removeActBurgerAndBasket = () => {
-					menu.classList.remove('active');
-					body.classList.remove('menu_hasactive');
-					basket.classList.remove('active');
-					body.classList.remove('basket_hasactive');
-				};
-				document.addEventListener('click', removeActBurgerAndBasket);
 				if (module.hot) {
 					module.hot.dispose(() => {
-						document.removeEventListener('click', removeActBurgerAndBasket);
-						if (menuCancelBtn) menuCancelBtn.removeEventListener('click', removeBurgerActive);
-						if (burger) burger.removeEventListener('click', setBurgerActive);
+						document.removeEventListener('click', closeMobileSidebar);
+						if (menuCancelBtn) menuCancelBtn.removeEventListener('click', closeMobileSidebar);
+						if (burger) burger.removeEventListener('click', openMobileSidebar);
 						if (menu) menu.removeEventListener('click', stopBubble);
-						if (basketCancelBtn) basketCancelBtn.removeEventListener('click', removeBasketActive);
-						if (basketOpenBtn) basketOpenBtn.removeEventListener('click', setBasketActive);
+						if (basketCancelBtn) basketCancelBtn.removeEventListener('click', closeMobileSidebar);
+						if (basketOpenBtn) basketOpenBtn.removeEventListener('click', openMobileSidebar);
 						if (basket) basket.removeEventListener('click', stopBubble);
 					});
 				}

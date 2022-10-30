@@ -26,11 +26,8 @@
 	left: 0;
 	background-color: rgba(#000, 0.29);
 	backdrop-filter: blur(3px);
-}
 
-.menu_hasactive,
-.basket_hasactive {
-	.menu_darken {
+	&.active {
 		display: block;
 	}
 }
