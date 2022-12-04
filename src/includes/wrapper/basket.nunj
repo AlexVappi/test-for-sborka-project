@@ -1,55 +1,55 @@
 {% from "../components/product/product.nunj" import product %}
 
-<div class="bb-gray block products">
-    {{ icon({
+<div class="block products">
+				{{ icon({
         iconName: 'arrow-right',
         className: 'icon cancelBasket',
         attributes: 'width="40px" height="40px" viewBox="0 0 24 24"'
     }) }}
-    <h3>My basket</h3>
-    <div class="products__list">
-        {% set totalSum = 0 %}
-        {% for productItem in products %}
-            {{ product(productItem) }}
-            {% set totalSum = totalSum + productItem.price %}
-        {% endfor %}
-    </div>
-    <div class="basket-empty text-center" style="display: none">
-        <h3 class="title_light">Basket is empty</h3>
-        {{ button({
+				<h3 class="title block__title">My basket</h3>
+				<div class="products__list">
+								{% set totalSum = 0 %}
+								{% for productItem in products %}
+												{{ product(productItem) }}
+												{% set totalSum = totalSum + productItem.price %}
+								{% endfor %}
+				</div>
+				<div class="basket-empty text-center" style="display: none">
+								<h3 class="title basket-empty__title title_light">Basket is empty</h3>
+								{{ button({
             className: 'button_primary button_xs button_centered js-basket-reset',
             children: 'Reset'
         }) }}
-    </div>
+				</div>
 </div>
-<div class="bb-gray block">
-    <h3>Promo code</h3>
-    <form action="" class="promocode-form" id="promocodeForm">
-        <input type="text" placeholder="Placeholder Text" class="i-text i-text_mb-0">
-        {{ button({
+<div class="block">
+				<h3 class="title block__title">Promo code</h3>
+				<form action="" class="promocode-form" id="promocodeForm">
+								<input type="text" placeholder="Placeholder Text" class="i-text i-text_mb-0">
+								{{ button({
             className: 'button_primary',
             type: "submit",
             children: 'Apply'
         }) }}
-    </form>
+				</form>
 </div>
-<div class="block">
-    <table class="total-table">
-        <tr>
-            <td>Subtotal</td>
-            <td class="text-right">$<span class="subtotal-price">{{formatNumber(totalSum)}}</span></td>
-        </tr>
-        <tr>
-            <td>Tax</td>
-            <td class="text-right">${{formatNumber(tax)}}</td>
-        </tr>
-        <tr>
-            <td>Shipping</td>
-            <td class="text-right">${{formatNumber(shipping)}}</td>
-        </tr>
-        <tr class="font-bold">
-            <td>Total</td>
-            <td class="text-right">$<span class="total-price">{{formatNumber(totalSum + tax + shipping)}}</span></td>
-        </tr>
-    </table>
+<div class="block _last">
+				<table class="total-table">
+								<tr>
+												<td>Subtotal</td>
+												<td class="text-right">$<span class="subtotal-price">{{formatNumber(totalSum)}}</span></td>
+								</tr>
+								<tr>
+												<td>Tax</td>
+												<td class="text-right">${{formatNumber(tax)}}</td>
+								</tr>
+								<tr>
+												<td>Shipping</td>
+												<td class="text-right">${{formatNumber(shipping)}}</td>
+								</tr>
+								<tr class="font-bold">
+												<td>Total</td>
+												<td class="text-right">$<span class="total-price">{{formatNumber(totalSum + tax + shipping)}}</span></td>
+								</tr>
+				</table>
 </div>

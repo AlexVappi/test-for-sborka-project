@@ -111,31 +111,22 @@ body {
 	-webkit-overflow-scrolling: touch;
 }
 
-.bb-gray {
-	border-bottom: 1px solid #cfcfcf;
-}
-
-.br-gray {
-	border-right: 1px solid #cfcfcf;
-}
-
 .d-inline-block {
 	display: inline-block;
 }
 
-h2,
-h3 {
+.title {
 	font-size: 18px;
 	font-weight: 700;
 }
 
-h2 {
-	margin-bottom: 40px;
-}
+// h2 {
+// 	margin-bottom: 40px;
+// }
 
-h3 {
-	margin-bottom: 30px;
-}
+// h3 {
+// 	margin-bottom: 30px;
+// }
 
 .text-right {
 	text-align: right;

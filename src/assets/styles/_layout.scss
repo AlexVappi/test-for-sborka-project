@@ -1,5 +1,18 @@
 .wrapper {
 	position: relative;
+	display: flex;
+	&__body {
+		flex-grow: 1;
+		padding: 60px 63px;
+		border-right: 1px solid #cfcfcf;
+	}
+	&__basket {
+		min-width: 410px;
+		width: 410px;
+	}
+	&__title {
+		margin-bottom: 20px;
+	}
 }
 
 .container {
@@ -18,32 +31,20 @@
 	margin-left: 0;
 }
 
-.wrapper_flex {
-	display: flex;
-}
-
-.wrapper__body {
-	flex-grow: 1;
-	padding: 60px 63px;
-}
-
-.wrapper__basket {
-	min-width: 410px;
-	width: 410px;
-}
-
 .block {
 	padding: 40px;
+	border-bottom: 1px solid #cfcfcf;
+	&._last {
+		border-bottom: none;
+	}
+	&__title {
+		margin-bottom: 30px;
+	}
 }
 
 .block-outer {
 	margin-left: -30px;
 }
-
-// .elems{
-// 	display: flex;
-// 	flex-wrap: wrap;
-// }
 
 .grid {
 	display: grid;
@@ -62,7 +63,11 @@
 	width: calc(50% - 20px);
 	margin-right: 20px;
 }
-
+.basket-empty {
+	&__title {
+		margin-bottom: 10px;
+	}
+}
 @media screen and (max-width: 1150px) and (min-width: 910px) {
 	.wrapper__basket {
 		min-width: 310px;

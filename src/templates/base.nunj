@@ -17,7 +17,7 @@
 				</head>
 				<body>
 
-								<div class="wrapper">
+								<div class="wrap">
 												{% block content %}{% endblock content %}
 								</div>
 

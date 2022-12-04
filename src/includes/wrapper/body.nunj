@@ -5,12 +5,12 @@
 
 {{ steps() }}
 <div class="container">
-    <h2>Billing Information</h2>
+				<h2 class="title wrapper__title">Billing Information</h2>
 
-    <form action="" class="form" id="billingForm">
-        <div class="container container_tiny container_lefter">
-            <div class="flex">
-                {{ radio({
+				<form action="" class="form" id="billingForm">
+								<div class="container container_tiny container_lefter">
+												<div class="flex">
+																{{ radio({
                     className: 'col-2',
                     value: 'creditCard',
                     name: 'payment-format',
@@ -21,7 +21,7 @@
                         val: 'Pay with Credit Card'
                     }
                 }) }}
-                {{ radio({
+																{{ radio({
                     className: 'col-2 block-outer',
                     value: 'PayPal',
                     name: 'payment-format',
@@ -35,34 +35,34 @@
                         }
                     }
                 }) }}
-            </div>
-            <div class="block-outer card-block">
-                <label for="cardname" class="i-label">Name on card</label>
-                <input type="text" id="cardname" name="cardname" pattern="^[a-zA-Z\s]+$" class="i-text" placeholder="Placeholder Text" required="required">
-                <label for="cardnumber-1" class="i-label">Card number</label>
-                <div class="grid grid_4">
-                    <input type="number" id="cardnumber-1" max="9999" name="cardnumber-1" class="i-text col col-4 i-cardnumber" required="required">
-                    <input type="number" id="cardnumber-2" max="9999" name="cardnumber-2" class="i-text col col-4 i-cardnumber" required="required">
-                    <input type="number" id="cardnumber-3" max="9999" name="cardnumber-3" class="i-text col col-4 i-cardnumber" required="required">
-                    <input type="number" id="cardnumber-4" max="9999" name="cardnumber-4" class="i-text col col-4 i-cardnumber" required="required">
-                    <div class="col col-4">
-                        <label for="carddate" class="i-label">Expire date</label>
-                        <input type="text" maxlength="5" id="carddate" name="carddate" class="i-text i-text_mb-0" required="required">
-                    </div>
-                    <div class="col col-4">
-                        <label for="cvv-code" class="i-label">
-                            CVV code
-                            {{ popover({ 
+												</div>
+												<div class="block-outer card-block">
+																<label for="cardname" class="i-label">Name on card</label>
+																<input type="text" id="cardname" name="cardname" pattern="^[a-zA-Z\s]+$" class="i-text" placeholder="Placeholder Text" required="required">
+																<label for="cardnumber-1" class="i-label">Card number</label>
+																<div class="grid grid_4">
+																				<input type="number" id="cardnumber-1" max="9999" name="cardnumber-1" class="i-text col col-4 i-cardnumber" required="required">
+																				<input type="number" id="cardnumber-2" max="9999" name="cardnumber-2" class="i-text col col-4 i-cardnumber" required="required">
+																				<input type="number" id="cardnumber-3" max="9999" name="cardnumber-3" class="i-text col col-4 i-cardnumber" required="required">
+																				<input type="number" id="cardnumber-4" max="9999" name="cardnumber-4" class="i-text col col-4 i-cardnumber" required="required">
+																				<div class="col col-4">
+																								<label for="carddate" class="i-label">Expire date</label>
+																								<input type="text" maxlength="5" id="carddate" name="carddate" class="i-text i-text_mb-0" required="required">
+																				</div>
+																				<div class="col col-4">
+																								<label for="cvv-code" class="i-label">
+																												CVV code
+																												{{ popover({ 
                                 className: 'd-inline-block',
                                 text: 'popover-text'
                             }) }}
-                        </label>
-                        <input type="password" maxlength="3" id="cvv-code" name="cvv-code" class="i-text i-text_mb-0" required="required">
-                    </div>
-                </div>
+																								</label>
+																								<input type="password" maxlength="3" id="cvv-code" name="cvv-code" class="i-text i-text_mb-0" required="required">
+																				</div>
+																</div>
 
-            </div>
-            {{
+												</div>
+												{{
                 checkbox({
                     className: "",
                     label: "Save information of this credit card",
@@ -71,7 +71,7 @@
                     checked: true
                 })
             }}
-            {{
+												{{
                 checkbox({
                     className: "",
                     label: "I accept the <a href='#'>terms and comditions</a> and the <a href='#'>Privacy Policies</a>",
@@ -80,18 +80,18 @@
                     required: true
                 })
             }}
-        </div>
-        <div class="form__bottom">
-            {{ button({
+								</div>
+								<div class="form__bottom">
+												{{ button({
                 className: 'button_light',
                 children: 'Back'
             }) }}
-            {{ button({
+												{{ button({
                 className: 'button_primary',
                 type: "submit",
                 children: 'Check Out'
             }) }}
-        </div>
-    </form>
+								</div>
+				</form>
 
 </div>

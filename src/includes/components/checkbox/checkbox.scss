@@ -26,7 +26,7 @@ input[type='checkbox']:checked + label .like-checkbox::after {
 }
 
 .label-checkbox {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	color: #8c8c8c;
 	margin-bottom: 12px;

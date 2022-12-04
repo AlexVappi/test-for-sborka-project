@@ -1,4 +1,3 @@
-'use strict';
 import webpack from 'webpack';
 import path from 'path';
 
@@ -31,7 +30,7 @@ export const config = {
 					path.resolve(__dirname, 'src/assets/js'),
 					path.resolve(__dirname, 'node_modules/gsap'),
 				],
-				use: ['babel-loader', 'eslint-loader']
+				use: ['babel-loader', 'eslint-loader'],
 			},
 			{
 				test: /\.json$/,
